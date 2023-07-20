@@ -4,6 +4,7 @@ import PostsListing from "./PostsListing";
 import PostDetails from "./PostDetails";
 import Heading from "./Heading";
 import TextBlockWithImage from "./TextBlockWithImage";
+import DefaultModule from "./DefaultModule";
 import { ModuleWithInit } from "@agility/nextjs";
 
 // All of the Agility Page Module Components that are in use in this site need to be imported into this index file.
@@ -23,6 +24,6 @@ export const getModule = (moduleName: string): ModuleWithInit | null => {
   const obj = allModules.find(
     (m) => m.name.toLowerCase() === moduleName.toLowerCase()
   );
-  if (!obj) return null;
+  if (!obj) return DefaultModule as unknown as ModuleWithInit;
   return obj.module as ModuleWithInit;
 };
