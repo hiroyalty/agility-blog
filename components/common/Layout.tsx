@@ -20,6 +20,7 @@ interface Props {
 }
 
 function Layout(props: AgilityPageProps) {
+	console.log("Layout props", props)
 	const {page, sitemapNode, dynamicPageItem, notFound, pageTemplateName, isDevelopmentMode, isPreview} = props
 
 	const [isPreviewRequested, setisPreviewRequested] = useState(false)
